@@ -53,14 +53,7 @@ on:
  workflow_dispatch:
 
 jobs:
-    Komal:
-        runs-on: ubuntu-latest
-        steps:
-        - uses: actions/checkout@v3
-        - name: Komal-JOB
-          run:  echo "Komal-Choudhary"
-          shell: bash
-
+    
     Kirti:
         runs-on: ubuntu-latest
         steps:
