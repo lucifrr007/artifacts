@@ -1,47 +1,77 @@
-name: artifacts-push
+# name: artifacts-push
 
+
+# on:
+#  push:
+#     branches:
+#       - main
+
+
+# jobs:
+#     build-package:
+#         name: Build and test
+#         runs-on: ubuntu-latest
+
+#         steps:
+#             - name: Checkout
+#               uses: actions/checkout@v3  
+            
+            
+#             - name: Dotnet-setup
+#               uses: actions/setup-dotnet@v3
+#               with: 
+#                 dotnet-version: 3.1.301
+
+#             - name: Install dependencies
+#               run: dotnet restore "${{github.workspace}}/mywebapp/mywebapp.csproj"
+
+#             - name : Build 
+#               run: dotnet restore "${{github.workspace}}/mywebapp/mywebapp.csproj" --configuration Release --no-restore
+
+#             - name : Test 
+#               run: dotnet restore "${{github.workspace}}/mywebapp/mywebapp.csproj"  --no-restore --verbosity normal
+
+#             - name : Publish 
+#               run: |
+#                 dotnet restore "${{github.workspace}}/mywebapp/mywebapp.csproj"  -c Release -o mywebapp
+
+#             - name: upload artifact
+#               uses: actions/upload-artifact@v3.1.2
+#               with: 
+#                 name: webapp-artifacts
+#                 path: mywebapp/**
+#                 if-no-files-found: error
+#                 retention-days: 30
+
+
+name: Double jon Run
 
 on:
  push:
-    branches:
-      - main
-
+   branches:
+     -  main
+ workflow_dispatch:
 
 jobs:
-    build-package:
-        name: Build and test
+    Komal:
         runs-on: ubuntu-latest
-
         steps:
-            - name: Checkout
-              uses: actions/checkout@v3  
-            
-            
-            - name: Dotnet-setup
-              uses: actions/setup-dotnet@v3
-              with: 
-                dotnet-version: 3.1.301
+        - uses: actions/checkout@v3
+        - name: Komal-JOB
+          run:  echo "Komal-Choudhary"
+          shell: bash
 
-            - name: Install dependencies
-              run: dotnet restore "${{github.workspace}}/mywebapp/mywebapp.csproj"
-
-            - name : Build 
-              run: dotnet restore "${{github.workspace}}/mywebapp/mywebapp.csproj" --configuration Release --no-restore
-
-            - name : Test 
-              run: dotnet restore "${{github.workspace}}/mywebapp/mywebapp.csproj"  --no-restore --verbosity normal
-
-            - name : Publish 
-              run: |
-                dotnet restore "${{github.workspace}}/mywebapp/mywebapp.csproj"  -c Release -o mywebapp
-
-            - name: upload artifact
-              uses: actions/upload-artifact@v3.1.2
-              with: 
+    Kirti:
+        runs-on: ubuntu-latest
+        steps:
+          - uses: actions/checkout@v3
+          - name: Kirti-JOB
+            run:  echo "Kirti-Bardhan"
+            shell: bash   
+          - name: upload artifact
+            uses: actions/upload-artifact@v3.1.2
+            with: 
                 name: webapp-artifacts
                 path: mywebapp/**
                 if-no-files-found: error
                 retention-days: 30
-
-
-
